@@ -1,3 +1,6 @@
+const userDay = +prompt("Please enter your birth day: (1-31)");
+const userMonth = +prompt("Please enter your birth month: (1-12)");
+
 function getUserZodiac(day, month) {
   switch (month) {
     case 1:
@@ -264,7 +267,10 @@ const horoscope = {
     return this.stuff[Math.floor(Math.random() * (this.stuff.length - 1))];
   },
   getRandomSent() {
-    return `${this.getRandomName()} ${this.getRandomThing()} will be ${this.getRandomStuff()}.\nLucky Color: ${getRandomColor(
+    return `Hello ${getUserZodiac(
+      userDay,
+      userMonth
+    )}!\n${this.getRandomName()} ${this.getRandomThing()} will be ${this.getRandomStuff()}.\nLucky Color: ${getRandomColor(
       colorNames
     )}\nLucky Number: ${Math.floor(Math.random() * 10)}`;
   },
